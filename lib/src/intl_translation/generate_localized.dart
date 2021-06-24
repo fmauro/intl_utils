@@ -292,6 +292,14 @@ import 'package:$intlImportPath/intl.dart';
 import 'package:$intlImportPath/message_lookup_by_library.dart';
 import 'package:$intlImportPath/src/intl_helpers.dart';
 
+""";
+
+  /// Constant string used in [generateMainImportFile] as the end of the file.
+  String get closing => '''
+    default:\n      return null;
+  }
+}
+
 /// This is a message lookup mechanism that delegates to one of a collection
 /// of individual [MessageLookupByLibrary] instances.
 class MultiCompositeMessageLookup implements MessageLookup {
@@ -355,15 +363,6 @@ class MultiCompositeMessageLookup implements MessageLookup {
         _lastLookup = null;
       }
     }
-  }
-}
-
-
-""";
-
-  /// Constant string used in [generateMainImportFile] as the end of the file.
-  String get closing => '''
-    default:\n      return null;
   }
 }
 
