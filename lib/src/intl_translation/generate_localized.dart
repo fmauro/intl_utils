@@ -336,7 +336,7 @@ class MultiCompositeMessageLookup implements MessageLookup {
       if((result ?? '') != '') return result;
     }
 
-    return null;
+    return messageText;
   }
 
   /// Find the right message lookup for [locale].
